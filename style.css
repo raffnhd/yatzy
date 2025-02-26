@@ -99,6 +99,42 @@ body {
     border: 1px solid #000; 
 }
 
+.score-sum{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    border: 1px solid #000; 
+}
+
+.score-sum input {
+    width: 50px;
+    text-align: center;
+}
+
+.score-bonus{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    border: 1px solid #000; 
+}
+
+.score-bonus input {
+    width: 50px;
+    text-align: center;
+}
+
+.score-total{
+    display: flex;
+    align-items: right;
+    justify-content: flex-end; 
+    border: 1px solid #000; 
+}
+
+.score-total input {
+    width: 50px;
+    text-align: center;
+}
+
 #ones-label { grid-row: 1; }
 #ones { grid-row: 1; grid-column: 2 / span 1; }
 
