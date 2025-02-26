@@ -1,62 +1,58 @@
 document.getElementById('roll-button').addEventListener('click', rollDice);
 
-const dieImages = [
-    'dice-six-faces-one.png',
-    'dice-six-faces-two.png',
-    'dice-six-faces-three.png',
-    'dice-six-faces-four.png',
-    'dice-six-faces-five.png',
-    'dice-six-faces-six.png'
-];
-
 let currentRound = 1;
 let rollsThisRound = 0;
 const maxRounds = 15;
 const maxRollsPerRound = 3;
-const roundData = [];
+let dieValues = [];
 
 function rollDice() {
-    if (currentRound > maxRounds) {
-        alert("Game over! You've completed all rounds.");
-        return;
-    }
-
-    if (rollsThisRound >= maxRollsPerRound) {
-        if (!checkIfAnyInputFilledThisRound()) {
-            alert("You must fill in at least one score before proceeding to the next round.");
-            return;
-        } else {
-            disableFilledInputs();
-            currentRound++;
-            rollsThisRound = 0;
-            resetDice();
-            updateRollsLeft();
-            updateCurrentRound();
-        }
-    }
-
-    const currentRollData = [];
-
     for (let i = 1; i <= 5; i++) {
         const die = document.getElementById(`die${i}`);
         if (!die.classList.contains('locked')) {
             const roll = Math.floor(Math.random() * 6) + 1;
-            die.innerHTML = `<img src="${dieImages[roll - 1]}" alt="Die ${roll}">`;
-            currentRollData.push({value: roll, locked: true});
+            die.innerHTML = `<img src="${dieConverter(roll)}" alt="Die ${roll}">`;
+            dieValues[i - 1] = roll;
         } else {
             const roll = parseInt(die.querySelector('img').alt.split(' ')[1]);
-            currentRollData.push({value: roll, locked: false});
         }
     }
+    console.log(dieValues);
+}
 
-    if (!roundData[currentRound - 1]) {
-        roundData[currentRound - 1] = [];
+function dieConverter(roll){
+    switch (roll) {
+        case 1:
+            return 'dice-six-faces-one.png';
+        case 2:
+            return 'dice-six-faces-two.png';
+        case 3:
+            return 'dice-six-faces-three.png';
+        case 4:
+            return 'dice-six-faces-four.png';
+        case 5:
+            return 'dice-six-faces-five.png';
+        case 6:
+            return 'dice-six-faces-six.png';
     }
+}
 
-    roundData[currentRound - 1].push(currentRollData);
+function getResults() {
+    let total = new Array(15);
+    for (let i = 0; i < 6; i++) {
+        total[i] = yatzyHjerne.sameValuePoints(i + 1);
+    }
+    total[6] = yatzyHjerne.onePair();
+    total[7] = yatzyHjerne.twoPairs();
+    total[8] = yatzyHjerne.threeOfAKind();
+    total[9] = yatzyHjerne.fourOfAKind();
+    total[10] = yatzyHjerne.smallStraight();
+    total[11] = yatzyHjerne.largeStraight();
+    total[12] = yatzyHjerne.fullHouse();
+    total[13] = yatzyHjerne.chance();
+    total[14] = yatzyHjerne.yatzy();
 
-    rollsThisRound++;
-    updateRollsLeft();
+    return total;
 }
 
 function holdLock(event) {
