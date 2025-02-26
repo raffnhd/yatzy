@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yahtzee</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="dice-container">
+            <div class="die" id="die1"></div>
+            <div class="die" id="die2"></div>
+            <div class="die" id="die3"></div>
+            <div class="die" id="die4"></div>
+            <div class="die" id="die5"></div>
+        </div>
+        <button id="roll-button">Roll!</button>
+        <div id="info-container">
+            <div id="rolls-left">Rolls left: 3</div>
+            <div id="current-round">Round: 1</div>
+        </div>
+    </div>
+    <div id="scorecard-container">
+        <div id="scorecard">
+            <div class="score-label" id="ones-label">1-s</div>
+            <div class="score-input" id="ones"><input type="number" value=""></div>
+            <div class="score-label" id="twos-label">2-s</div>
+            <div class="score-input" id="twos"><input type="number" value=""></div>
+            <div class="score-label" id="threes-label">3-s</div>
+            <div class="score-input" id="threes"><input type="number" value=""></div>
+            <div class="score-label" id="fours-label">4-s</div>
+            <div class="score-input" id="fours"><input type="number" value=""></div>
+            <div class="score-label" id="fives-label">5-s</div>
+            <div class="score-input" id="fives"><input type="number" value=""></div>
+            <div class="score-label" id="sixes-label">6-s</div>
+            <div class="score-input" id="sixes"><input type="number" value=""></div>
+            <div class="score-label" id="sum-label">Sum:</div>
+            <div class="score-input" id="sum"><input type="number" value="" readonly></div>
+            <div class="score-label" id="bonus-label">Bonus:</div>
+            <div class="score-input" id="bonus"><input type="number" value="" readonly></div>
+            <div class="score-label" id="one-of-a-kind-label">One pair</div>
+            <div class="score-input" id="one-of-a-kind"><input type="number" value=""></div>
+            <div class="score-label" id="two-of-a-kind-label">Two pairs</div>
+            <div class="score-input" id="two-of-a-kind"><input type="number" value=""></div>
+            <div class="score-label" id="three-same-label">Three same</div>
+            <div class="score-input" id="three-same"><input type="number" value=""></div>
+            <div class="score-label" id="four-same-label">Four same</div>
+            <div class="score-input" id="four-same"><input type="number" value=""></div>
+            <div class="score-label" id="full-house-label">Full house</div>
+            <div class="score-input" id="full-house"><input type="number" value=""></div>
+            <div class="score-label" id="small-straight-label">Small straight</div>
+            <div class="score-input" id="small-straight"><input type="number" value=""></div>
+            <div class="score-label" id="large-straight-label">Large straight</div>
+            <div class="score-input" id="large-straight"><input type="number" value=""></div>
+            <div class="score-label" id="chance-label">Chance</div>
+            <div class="score-input" id="chance"><input type="number" value=""></div>
+            <div class="score-label" id="yahtzee-label">Yahtzee</div>
+            <div class="score-input" id="yahtzee"><input type="number" value=""></div>
+            <div class="score-label" id="total-label">Total:</div>
+            <div class="score-input" id="total"><input type="number" value="" readonly></div>
+        </div>
+    </div>
+    <script src="spil.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+body { 
+    font-family: Arial, sans-serif;
+    text-align: left;
+    margin: 0;
+    padding: 20px;
+    background: #f5deb3;;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+}
+
+#game-container { /* Dette er containeren til spillet */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    border: 1px solid #000;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 45%;
+    margin-left: 0;
+    height: 150px;
+}
+
+#dice-container { /* Dette er containeren til terningerne */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#info-container { /* Dette er containeren til terningerne og knappen */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.die { /* Dette er terningen */
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin: 5px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.die img { /* Dette er billedet af terningen */
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+}
+
+.die.locked { /* Dette er de terninger som er låst */
+    border: 2px solid #f00;
+    background-color: aqua;
+}
+
+#roll-button { /* Dette er roll knappen */
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: auto;
+}
+
+#scorecard-container { /* Dette er containeren til scorecardet */
+    border: 1px solid #000;
+    padding: 10px;
+    width: 45%;
+    margin-left: 0;
+    height: 500px;
+}
+
+#scorecard { /* Det er scorecardet hvor man inputer values*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(15, auto); 
+    gap: 10px;
+    margin-top: 20px;
+    border: 1px solid #000;
+}
+
+.score-label { /* Dette er labelsne til scorecardet */
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    padding-left: 10px; 
+    border: 1px solid #000;
+}
+
+.score-input { /* Dette er input felterne til scorecardet */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    border: 1px solid #000; 
+}
+
+#ones-label { grid-row: 1; }
+#ones { grid-row: 1; grid-column: 2 / span 1; }
+
+#twos-label { grid-row: 2; }
+#twos { grid-row: 2; grid-column: 2 / span 1; }
+
+#threes-label { grid-row: 3; }
+#threes { grid-row: 3; grid-column: 2 / span 1; }
+
+#fours-label { grid-row: 4; }
+#fours { grid-row: 4; grid-column: 2 / span 1; }
+
+#fives-label { grid-row: 5; }
+#fives { grid-row: 5; grid-column: 2 / span 1; }
+
+#sixes-label { grid-row: 6; }
+#sixes { grid-row: 6; grid-column: 2 / span 1; }
+
+#sum-label { grid-row: 6; grid-column: 3 / span 1; }
+#sum { grid-row: 6; grid-column: 3 / span 1; }
+
+#bonus-label { grid-row: 6; grid-column: 4 / span 1; }
+#bonus { grid-row: 6; grid-column: 4 / span 1; }
+
+#one-of-a-kind-label { grid-row: 7; }
+#one-of-a-kind { grid-row: 7; grid-column: 2 / span 1; }
+
+#two-of-a-kind-label { grid-row: 8; }
+#two-of-a-kind { grid-row: 8; grid-column: 2 / span 1; }
+
+#three-same-label { grid-row: 9; }
+#three-same { grid-row: 9; grid-column: 2 / span 1; }
+
+#four-same-label { grid-row: 10; }
+#four-same { grid-row: 10; grid-column: 2 / span 1; }
+
+#full-house-label { grid-row: 11; }
+#full-house { grid-row: 11; grid-column: 2 / span 1; }
+
+#small-straight-label { grid-row: 12; }
+#small-straight { grid-row: 12; grid-column: 2 / span 1; }
+
+#large-straight-label { grid-row: 13; }
+#large-straight { grid-row: 13; grid-column: 2 / span 1; }
+
+#chance-label { grid-row: 14; }
+#chance { grid-row: 14; grid-column: 2 / span 1; }
+
+#yahtzee-label { grid-row: 15; }
+#yahtzee { grid-row: 15; grid-column: 2 / span 1; }
+
+#total-label { grid-row: 15; grid-column: 4;}
+#total { grid-row: 15; grid-column: 4 / span 1; }
+
+.score-input input {
+    width: 50px;
+    text-align: center;
+}
